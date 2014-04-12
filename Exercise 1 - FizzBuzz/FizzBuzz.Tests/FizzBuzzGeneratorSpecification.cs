@@ -30,10 +30,22 @@ namespace FizzBuzz.Tests
             Assert.That(GenerateFizzBuzz(-1), Is.Empty, "Expected FizzBuzz( -1 ) to return empty enumeration");
         }
 
+        [Test]
+        public void ToFizzBuzz_returns_Fizz_for_3()
+        {
+            Assert.That(ToFizzBuzz(3), Is.EqualTo("Fizz"), "Expected 3 to return \"Fizz\"");
+        }
+
         private IEnumerable<string> GenerateFizzBuzz(int upperLimit)
         {
             var fizzBuzz = new FizzBuzzGenerator();
             return fizzBuzz.FizzBuzz(upperLimit);
+        }
+
+        private string ToFizzBuzz(int value)
+        {
+            var fizzBuzz = new FizzBuzzGenerator();
+            return fizzBuzz.ToFizzBuzz(value);
         }
     }
 }

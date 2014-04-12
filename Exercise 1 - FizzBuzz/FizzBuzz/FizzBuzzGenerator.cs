@@ -12,7 +12,15 @@ namespace FizzBuzz
             if (upperLimit < 1)
                 return Enumerable.Empty<string>();
 
-            return Enumerable.Range(1, upperLimit).Select(i => i.ToString());
+            return Enumerable.Range(1, upperLimit).Select( ToFizzBuzz );
+        }
+
+        public string ToFizzBuzz(int value)
+        {
+            if (value == 3)
+                return "Fizz";
+
+            return value.ToString();
         }
     }
 }
