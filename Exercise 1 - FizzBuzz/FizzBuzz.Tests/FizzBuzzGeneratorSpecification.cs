@@ -24,6 +24,12 @@ namespace FizzBuzz.Tests
             Assert.That(GenerateFizzBuzz(0), Is.Empty, "Expected FizzBuzz( 0 ) to return empty enumeration");
         }
 
+        [Test]
+        public void returns_no_items_for_negative_upperLimit()
+        {
+            Assert.That(GenerateFizzBuzz(-1), Is.Empty, "Expected FizzBuzz( -1 ) to return empty enumeration");
+        }
+
         private IEnumerable<string> GenerateFizzBuzz(int upperLimit)
         {
             var fizzBuzz = new FizzBuzzGenerator();
