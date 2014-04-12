@@ -9,7 +9,7 @@ namespace FizzBuzz
     {
         public IEnumerable<string> FizzBuzz(int upperLimit)
         {
-            return Enumerable.Empty<string>();
+            return Enumerable.Range(1, upperLimit).Select(i => i.ToString());
         }
     }
 }
