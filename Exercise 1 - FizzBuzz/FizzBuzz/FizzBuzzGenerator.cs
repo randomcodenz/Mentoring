@@ -9,6 +9,9 @@ namespace FizzBuzz
     {
         public IEnumerable<string> FizzBuzz(int upperLimit)
         {
+            if (upperLimit < 1)
+                return Enumerable.Empty<string>();
+
             return Enumerable.Range(1, upperLimit).Select(i => i.ToString());
         }
     }
