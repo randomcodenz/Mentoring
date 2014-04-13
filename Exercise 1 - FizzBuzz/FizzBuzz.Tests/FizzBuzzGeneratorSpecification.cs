@@ -11,7 +11,7 @@ namespace FizzBuzz.Tests
     public class When_using_FizzBuzzGenerator
     {
         [Test]
-        public void returns_upperLimit_items()
+        public void FizzBuzz_returns_upperLimit_items()
         {
             var fizzbuzz = new FizzBuzzGenerator();
 
@@ -19,13 +19,13 @@ namespace FizzBuzz.Tests
         }
 
         [Test]
-        public void returns_no_items_for_zero()
+        public void FizzBuzz_returns_no_items_for_zero()
         {
             Assert.That(GenerateFizzBuzz(0), Is.Empty, "Expected FizzBuzz( 0 ) to return empty enumeration");
         }
 
         [Test]
-        public void returns_no_items_for_negative_upperLimit()
+        public void FizzBuzz_returns_no_items_for_negative_upperLimit()
         {
             Assert.That(GenerateFizzBuzz(-1), Is.Empty, "Expected FizzBuzz( -1 ) to return empty enumeration");
         }
@@ -64,6 +64,13 @@ namespace FizzBuzz.Tests
         public void ToFizzBuzz_returns_FizzBuzz_for_multiple_of_15()
         {
             Assert.That(ToFizzBuzz(30), Is.EqualTo("FizzBuzz"), "Expected 30 to return \"FizzBuzz\"");
+        }
+
+        [Test]
+        public void FizzBuzz_generates_correct_sequence()
+        {
+            var expected = new[] { "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz", "16", "17", "Fizz", "19", "Buzz", "Fizz", "22" };
+            Assert.That(GenerateFizzBuzz(22), Is.EquivalentTo(expected), "Expected FizzBuzz to generate the correct sequence up to 22" );
         }
 
         private IEnumerable<string> GenerateFizzBuzz(int upperLimit)
