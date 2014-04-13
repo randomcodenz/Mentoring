@@ -48,6 +48,12 @@ namespace FizzBuzz.Tests
             Assert.That(ToFizzBuzz(5), Is.EqualTo("Buzz"), "Expected 5 to return \"Buzz\"");
         }
 
+        [Test]
+        public void ToFizzBuzz_returns_Buzz_for_multiple_of5()
+        {
+            Assert.That(ToFizzBuzz(10), Is.EqualTo("Buzz"), "Expected 10 to return \"Buzz\"");
+        }
+
         private IEnumerable<string> GenerateFizzBuzz(int upperLimit)
         {
             var fizzBuzz = new FizzBuzzGenerator();
