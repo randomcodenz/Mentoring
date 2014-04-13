@@ -17,15 +17,16 @@ namespace FizzBuzz
 
         public string ToFizzBuzz(int value)
         {
-            var result = string.Empty;
+            if (value % 15 == 0)
+                return "FizzBuzz";
 
             if (value % 3 == 0)
-                result = "Fizz";
+                return "Fizz";
 
             if (value % 5 == 0)
-                result += "Buzz";
+                return "Buzz";
 
-            return result == string.Empty ? value.ToString() : result;
+            return value.ToString();
         }
     }
 }
