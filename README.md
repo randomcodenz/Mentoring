@@ -14,6 +14,7 @@ Write a method that, given a number, returns the following for each integer betw
  - "Fizz" if the number is divisible by 3
  - "Buzz" if the number is divisible by 5
  - "FizzBuzz" if the number is divisible by 3 and 5
+ - otherwise return the number (as a string)
 
 Method should return an empty enumeration for numbers less than 1 
 
