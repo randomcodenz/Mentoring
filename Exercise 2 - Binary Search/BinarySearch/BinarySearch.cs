@@ -2,26 +2,23 @@
 {
     public class BinarySearch
     {
-        public int? Find( int[] array, int value )
+        public int? Find( int[] a, int v )
         {
-            if (array.Length == 0)
-                return null;
+            var x = 0;
+            var y = a.Length;
 
-            var lower = 0;
-            var upper = array.Length - 1;
-
-            while (lower != upper)
+            while (x != y)
             {
-                var pivot = (lower + upper) / 2;
-                var pivotValue = array[pivot];
+                var m = (x + y) / 2;
+                var n = a[m];
 
-                if (pivotValue < value)
-                    lower = pivot;
+                if (n < v)
+                    x = m;
                 else
-                    upper = pivot;
+                    y = m;
             }
 
-            return array[lower] == value ? lower : (int?)null;
+            return a[x] == v ? x : (int?)null;
         }
     }
 }
